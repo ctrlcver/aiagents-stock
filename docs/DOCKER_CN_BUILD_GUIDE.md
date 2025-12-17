@@ -219,7 +219,7 @@ cp .env.example .env
 docker build -f "Dockerfile国内源版" -t agentsstock1:latest .
 
 # 4. 运行容器
-docker run -d -p 8503:8501 -v $(pwd)/.env:/app/.env --name agentsstock1 agentsstock1:latest
+docker run -d -p 8503:8503 -v $(pwd)/.env:/app/.env --name agentsstock1 agentsstock1:latest
 
 # 5. 查看日志
 docker logs -f agentsstock1
@@ -233,7 +233,7 @@ docker logs -f agentsstock1
 ### 开发环境
 ```bash
 docker build -f "Dockerfile国内源版" -t agentsstock1:dev .
-docker run -d -p 8503:8501 \
+docker run -d -p 8503:8503 \
   -v $(pwd)/.env:/app/.env \
   -v $(pwd):/app \
   --name agentsstock1-dev \
@@ -243,7 +243,7 @@ docker run -d -p 8503:8501 \
 ### 生产环境
 ```bash
 docker build -f "Dockerfile国内源版" -t agentsstock1:prod .
-docker run -d -p 8503:8501 \
+docker run -d -p 8503:8503 \
   -v $(pwd)/.env:/app/.env \
   -v $(pwd)/data:/app/data \
   --restart unless-stopped \
