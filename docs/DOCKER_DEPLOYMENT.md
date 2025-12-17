@@ -105,7 +105,7 @@ mkdir -p data
 ```bash
 docker run -d \
   --name agentsstock1 \
-  -p 8501:8501 \
+  -p 8503:8503 \
   -v $(pwd)/data:/app/data \
   -v $(pwd)/.env:/app/.env \
   -v $(pwd)/stock_analysis.db:/app/stock_analysis.db \
